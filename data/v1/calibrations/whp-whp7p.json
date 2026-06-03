@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/pressure-calibration.schema.json",
+  "schemaVersion": "1.0.0",
+  "sensor": {
+    "id": "whp-whp7p",
+    "manufacturer": "WHP",
+    "productNumber": "WHP7P"
+  },
+  "calibration": [
+    {
+      "voltageVolts": 0.5,
+      "pressureAbsoluteBar": 1.01325
+    },
+    {
+      "voltageVolts": 4.5,
+      "pressureAbsoluteBar": 8.01325
+    }
+  ]
+}

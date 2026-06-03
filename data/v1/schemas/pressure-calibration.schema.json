@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/mrpatpat/sensor-db/main/data/v1/schemas/pressure-calibration.schema.json",
+  "title": "Pressure Sensor Calibration",
+  "description": "Calibration data for an analog pressure sensor, mapping output voltage to absolute pressure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sensor",
+    "calibration"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "description": "Version of this calibration document format.",
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "sensor": {
+      "description": "Identity of the calibrated pressure sensor.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "manufacturer",
+        "productNumber"
+      ],
+      "properties": {
+        "id": {
+          "description": "Stable identifier for this specific sensor entry.",
+          "type": "string",
+          "minLength": 1
+        },
+        "manufacturer": {
+          "description": "Sensor manufacturer name.",
+          "type": "string",
+          "minLength": 1
+        },
+        "productNumber": {
+          "description": "Manufacturer product number, part number, or order code.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "calibration": {
+      "description": "Voltage-to-absolute-pressure calibration table.",
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "voltageVolts",
+          "pressureAbsoluteBar"
+        ],
+        "properties": {
+          "voltageVolts": {
+            "description": "Sensor output voltage.",
+            "type": "number",
+            "minimum": 0
+          },
+          "pressureAbsoluteBar": {
+            "description": "Absolute pressure in bar.",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
