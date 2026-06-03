@@ -1,0 +1,68 @@
+{
+  "$schema": "../schemas/resistance-temperature-calibration.schema.json",
+  "schemaVersion": "1.0.0",
+  "sensor": {
+    "id": "ecumaster-generic-oil-temperature-sensor",
+    "manufacturer": "ECUMaster",
+    "productNumber": "Generic Oil Temperature Sensor",
+    "type": "ntc"
+  },
+  "calibration": [
+    {
+      "resistanceOhms": 21.064,
+      "temperatureCelsius": 174
+    },
+    {
+      "resistanceOhms": 53.721,
+      "temperatureCelsius": 135
+    },
+    {
+      "resistanceOhms": 82.5,
+      "temperatureCelsius": 113
+    },
+    {
+      "resistanceOhms": 115.946,
+      "temperatureCelsius": 98
+    },
+    {
+      "resistanceOhms": 170,
+      "temperatureCelsius": 87
+    },
+    {
+      "resistanceOhms": 220,
+      "temperatureCelsius": 76
+    },
+    {
+      "resistanceOhms": 281.111,
+      "temperatureCelsius": 67
+    },
+    {
+      "resistanceOhms": 387.391,
+      "temperatureCelsius": 59
+    },
+    {
+      "resistanceOhms": 495,
+      "temperatureCelsius": 51
+    },
+    {
+      "resistanceOhms": 640.588,
+      "temperatureCelsius": 43
+    },
+    {
+      "resistanceOhms": 939.231,
+      "temperatureCelsius": 34
+    },
+    {
+      "resistanceOhms": 1320,
+      "temperatureCelsius": 25
+    },
+    {
+      "resistanceOhms": 2027.143,
+      "temperatureCelsius": 13
+    },
+    {
+      "resistanceOhms": 5170,
+      "temperatureCelsius": 0
+    }
+  ]
+}
