@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/fuel-level-calibration.schema.json",
+  "schemaVersion": "1.0.0",
+  "sensor": {
+    "id": "nissan-s13-fuel-level-sender",
+    "manufacturer": "Nissan",
+    "productNumber": "S13 Fuel Level Sender"
+  },
+  "calibration": [
+    {
+      "resistanceOhms": 5.3,
+      "fuelLevelPercent": 100
+    },
+    {
+      "resistanceOhms": 31,
+      "fuelLevelPercent": 50
+    },
+    {
+      "resistanceOhms": 79.05,
+      "fuelLevelPercent": 0
+    }
+  ]
+}
