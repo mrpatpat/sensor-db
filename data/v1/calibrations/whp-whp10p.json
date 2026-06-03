@@ -1,19 +1,21 @@
 {
-  "$schema": "../schemas/pressure-calibration.schema.json",
+  "$schema": "../schemas/calibration.schema.json",
   "schemaVersion": "1.0.0",
   "sensor": {
     "id": "whp-whp10p",
     "manufacturer": "WHP",
     "productNumber": "WHP10P"
   },
+  "measurementUnit": "volt",
+  "valueUnit": "bar",
   "calibration": [
     {
-      "voltageVolts": 0.5,
-      "pressureAbsoluteBar": 1.01325
+      "measurement": 0.5,
+      "value": 1.01325
     },
     {
-      "voltageVolts": 4.5,
-      "pressureAbsoluteBar": 11.01325
+      "measurement": 4.5,
+      "value": 11.01325
     }
   ]
 }

@@ -1,13 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/mrpatpat/sensor-db/main/data/v1/schemas/resistance-temperature-calibration.schema.json",
-  "title": "Resistance Temperature Sensor Calibration",
-  "description": "Calibration data for an NTC or PTC resistance temperature sensor, mapping resistance values to degrees Celsius.",
+  "$id": "https://raw.githubusercontent.com/mrpatpat/sensor-db/main/data/v1/schemas/calibration.schema.json",
+  "title": "Sensor Calibration",
+  "description": "Generic calibration data for a sensor, mapping measured input values to calibrated output values.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schemaVersion",
     "sensor",
+    "measurementUnit",
+    "valueUnit",
     "calibration"
   ],
   "properties": {
@@ -23,8 +25,7 @@
       "required": [
         "id",
         "manufacturer",
-        "productNumber",
-        "type"
+        "productNumber"
       ],
       "properties": {
         "id": {
@@ -43,34 +44,40 @@
           "minLength": 1
         },
         "type": {
-          "description": "Resistance temperature sensor behavior.",
+          "description": "Optional sensor subtype.",
           "type": "string",
-          "enum": [
-            "ntc",
-            "ptc"
-          ]
+          "minLength": 1
         }
       }
     },
+    "measurementUnit": {
+      "description": "Unit of the measured input values.",
+      "type": "string",
+      "minLength": 1
+    },
+    "valueUnit": {
+      "description": "Unit of the calibrated output values.",
+      "type": "string",
+      "minLength": 1
+    },
     "calibration": {
-      "description": "Resistance-to-temperature calibration table.",
+      "description": "Calibration table mapping measured input to calibrated output.",
       "type": "array",
       "minItems": 2,
       "items": {
         "type": "object",
         "additionalProperties": false,
         "required": [
-          "resistanceOhms",
-          "temperatureCelsius"
+          "measurement",
+          "value"
         ],
         "properties": {
-          "resistanceOhms": {
-            "description": "Measured or specified sensor resistance in ohms.",
-            "type": "number",
-            "exclusiveMinimum": 0
+          "measurement": {
+            "description": "Measured input value in measurementUnit.",
+            "type": "number"
           },
-          "temperatureCelsius": {
-            "description": "Temperature in degrees Celsius corresponding to the resistance.",
+          "value": {
+            "description": "Calibrated output value in valueUnit.",
             "type": "number"
           }
         }

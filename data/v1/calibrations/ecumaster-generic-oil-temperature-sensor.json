@@ -1,5 +1,5 @@
 {
-  "$schema": "../schemas/resistance-temperature-calibration.schema.json",
+  "$schema": "../schemas/calibration.schema.json",
   "schemaVersion": "1.0.0",
   "sensor": {
     "id": "ecumaster-generic-oil-temperature-sensor",
@@ -7,62 +7,64 @@
     "productNumber": "Generic Oil Temperature Sensor",
     "type": "ntc"
   },
+  "measurementUnit": "ohm",
+  "valueUnit": "celsius",
   "calibration": [
     {
-      "resistanceOhms": 21.064,
-      "temperatureCelsius": 174
+      "measurement": 21.064,
+      "value": 174
     },
     {
-      "resistanceOhms": 53.721,
-      "temperatureCelsius": 135
+      "measurement": 53.721,
+      "value": 135
     },
     {
-      "resistanceOhms": 82.5,
-      "temperatureCelsius": 113
+      "measurement": 82.5,
+      "value": 113
     },
     {
-      "resistanceOhms": 115.946,
-      "temperatureCelsius": 98
+      "measurement": 115.946,
+      "value": 98
     },
     {
-      "resistanceOhms": 170,
-      "temperatureCelsius": 87
+      "measurement": 170,
+      "value": 87
     },
     {
-      "resistanceOhms": 220,
-      "temperatureCelsius": 76
+      "measurement": 220,
+      "value": 76
     },
     {
-      "resistanceOhms": 281.111,
-      "temperatureCelsius": 67
+      "measurement": 281.111,
+      "value": 67
     },
     {
-      "resistanceOhms": 387.391,
-      "temperatureCelsius": 59
+      "measurement": 387.391,
+      "value": 59
     },
     {
-      "resistanceOhms": 495,
-      "temperatureCelsius": 51
+      "measurement": 495,
+      "value": 51
     },
     {
-      "resistanceOhms": 640.588,
-      "temperatureCelsius": 43
+      "measurement": 640.588,
+      "value": 43
     },
     {
-      "resistanceOhms": 939.231,
-      "temperatureCelsius": 34
+      "measurement": 939.231,
+      "value": 34
     },
     {
-      "resistanceOhms": 1320,
-      "temperatureCelsius": 25
+      "measurement": 1320,
+      "value": 25
     },
     {
-      "resistanceOhms": 2027.143,
-      "temperatureCelsius": 13
+      "measurement": 2027.143,
+      "value": 13
     },
     {
-      "resistanceOhms": 5170,
-      "temperatureCelsius": 0
+      "measurement": 5170,
+      "value": 0
     }
   ]
 }

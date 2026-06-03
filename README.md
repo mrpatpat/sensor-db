@@ -1,5 +1,11 @@
 # sensor-db
 
+Sensor calibration data for automotive and motorsport electronics.
+
+The database stores sensor definitions as versioned JSON files with a shared
+calibration schema. Each calibration maps a measured input, such as resistance or
+voltage, to an engineering value, such as temperature, pressure, or fuel level.
+
 ## License
 
 This repository is licensed to the public under the GNU Affero General Public License
