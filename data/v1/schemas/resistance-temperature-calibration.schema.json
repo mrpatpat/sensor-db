@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/mrpatpat/sensor-db/main/data/v1/schemas/resistance-temperature-calibration.schema.json",
+  "title": "Resistance Temperature Sensor Calibration",
+  "description": "Calibration data for an NTC or PTC resistance temperature sensor, mapping resistance values to degrees Celsius.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sensor",
+    "calibration"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "description": "Version of this calibration document format.",
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "sensor": {
+      "description": "Identity of the calibrated sensor.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "manufacturer",
+        "productNumber",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "description": "Stable identifier for this specific sensor entry.",
+          "type": "string",
+          "minLength": 1
+        },
+        "manufacturer": {
+          "description": "Sensor manufacturer name.",
+          "type": "string",
+          "minLength": 1
+        },
+        "productNumber": {
+          "description": "Manufacturer product number, part number, or order code.",
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "description": "Resistance temperature sensor behavior.",
+          "type": "string",
+          "enum": [
+            "ntc",
+            "ptc"
+          ]
+        }
+      }
+    },
+    "calibration": {
+      "description": "Resistance-to-temperature calibration table.",
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resistanceOhms",
+          "temperatureCelsius"
+        ],
+        "properties": {
+          "resistanceOhms": {
+            "description": "Measured or specified sensor resistance in ohms.",
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "temperatureCelsius": {
+            "description": "Temperature in degrees Celsius corresponding to the resistance.",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
